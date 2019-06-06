@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CampaignList with campaigns 1`] = `
+<div
+  className="campaign-list"
+>
+  <ForwardRef(Bootstrap(Container))>
+    <ForwardRef(Bootstrap(Row))>
+      <h4>
+        Featured Engines 
+      </h4>
+    </ForwardRef(Bootstrap(Row))>
+    <ForwardRef(Bootstrap(Row))>
+      <CampaignDetails
+        createdAt={100000}
+        createdBy="Dan"
+        description="HatsHatsHats"
+        id="1"
+        imageURL="www.test.com"
+        key="1"
+        members={Array []}
+        title="Hats"
+        triggerNumber={1000}
+      />
+    </ForwardRef(Bootstrap(Row))>
+    <ForwardRef(Bootstrap(Row))>
+      <CampaignDetails
+        createdAt={100000}
+        createdBy="Dan"
+        description="HatsHatsHats2"
+        id="2"
+        imageURL="www.test.com"
+        key="2"
+        members={Array []}
+        title="Hats2"
+        triggerNumber={1000}
+      />
+    </ForwardRef(Bootstrap(Row))>
+  </ForwardRef(Bootstrap(Container))>
+</div>
+`;

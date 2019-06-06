@@ -1,0 +1,206 @@
+@import "./base/base";
+@import "./base/settings";
+@import "./components/loader";
+@import "./components/box-layout";
+
+header {
+  margin: 5px 0px 0px 0px;
+}
+
+body {
+  text: gray;
+  h1,
+  body,
+  button,
+  p,
+  a {
+    font-family: open sans, Helvetica, sans-serif;
+  }
+}
+
+.form-div {
+  margin: 20px 5px 5px 15px;
+}
+
+.campaign-form {
+}
+
+form {
+  max-width: 50%;
+  margin: 10px;
+  button {
+    margin: 10px;
+  }
+}
+
+.campaign-h1 {
+  color: #027362;
+}
+
+.header {
+  text-align: center;
+  a {
+    padding: 0px 20px 0px 2px;
+  }
+}
+
+a {
+  color: #282828 !important;
+}
+
+a:hover {
+  color: red;
+}
+
+.new-engine {
+  color: #027362;
+  padding-left: 15px;
+}
+
+.sign-in {
+  color: #027362;
+}
+
+.sign-up {
+  margin-left: 20px 0px 0px 20px;
+}
+
+.campaign-box {
+  width: 300px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size-adjust: auto;
+}
+
+.home-link a {
+  color: #024752;
+  margin: 20px;
+}
+
+header {
+  color: #024752;
+  box-sizing: border-box;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size-adjust: auto;
+  font-size: 25px;
+  color: #027362;
+  float: left;
+}
+
+header a {
+  color: #027362;
+  padding: 0px, 5px, 0px, 0px;
+  float: left;
+  border-bottom: 2px solid #027362;
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  background-color: #027362;
+  color: #fff;
+  font-size: 100%;
+  border-radius: 6px;
+  padding-top: 20px;
+  margin: 0px;
+  border: 0px;
+  transition: background-color 0.5s;
+}
+
+.logout-button {
+  float: right;
+}
+
+#google-button {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  max-width: 300px;
+  border: 1px;
+  border-color: gray;
+  border-style: solid;
+}
+
+.img-campaign {
+  max-width: 500px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  border: 1px;
+  border-color: gray;
+  border-style: solid;
+}
+
+input {
+  height: 40px;
+  width: 200px;
+  font-size: 100%;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 100%;
+}
+
+.form-style {
+  box-sizing: border-box;
+}
+
+.campaign-title h3 {
+  color: #282828;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.campaign-title {
+  color: #282828;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.campaign-link {
+  color: #282828;
+}
+
+.campaign-link a:hover {
+  color: #357462 !important;
+}
+
+.campaign-list h4 {
+  padding-top: 20px;
+  color: #282828;
+  // padding-left: 15px;
+  // letter-spacing: 0.5em;
+}
+
+#submit-button {
+  color: #027362;
+  background-color: white;
+}
+
+#submit-button:hover {
+  background-color: #16a2b8;
+  color: #fff;
+  transition: background-color 0.5s;
+}
+
+.campaign-description-text {
+  font-weight: 800;
+}
