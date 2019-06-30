@@ -8,7 +8,7 @@ const NewCampaign = props => (
   <div>
     <Container>
       <Row>
-        <h3 className="campaign-title">New Engine</h3>
+        <h3 className="campaign-title">New Hole</h3>
       </Row>
     </Container>
     <CampaignForm

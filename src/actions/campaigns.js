@@ -12,24 +12,28 @@ export const startAddCampaign = (campaignData = {}) => {
     const {
       title = "",
       description = "",
-      triggerNumber = 0,
+      par = 0,
       createdBy = "",
       createdAt = 0,
       members = [],
       imageURL = "",
       launched = false,
-      emailList = ""
+      emailList = "",
+      lat = 0,
+      lng = 0
     } = campaignData;
     const campaign = {
       title,
       description,
-      triggerNumber,
+      par,
       createdAt,
       createdBy,
       members,
       imageURL,
       launched,
-      emailList
+      emailList,
+      lat,
+      lng
     };
     database
       .ref("campaigns")

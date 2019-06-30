@@ -3,7 +3,6 @@ import moment from "moment";
 import { firebase } from "../firebase/firebase";
 import Button from "react-bootstrap/Button";
 import { Row, Col } from "react-bootstrap";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Form from "react-bootstrap/Form";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
@@ -15,7 +14,7 @@ export default class CampaignForm extends React.Component {
     this.state = {
       title: props.campaign ? props.campaign.title : "",
       description: props.campaign ? props.campaign.description : "",
-      triggerNumber: props.campaign ? props.campaign.triggerNumber : "",
+      par: props.campaign ? props.campaign.par : "",
       createdAt: props.campaign ? moment(props.campaign.createdAt) : moment(),
       createdBy: props.campaign ? props.campaign.createdBy : "",
       members: [],
@@ -24,7 +23,9 @@ export default class CampaignForm extends React.Component {
       image: null,
       url: "",
       emailList: "",
-      uploadPercentage: 0
+      uploadPercentage: 0,
+      lat: props.campaign ? props.campaign.lat : "",
+      lng: props.campaign ? props.campaign.lng : ""
     };
     this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
     this.fileUploadHandler = this.fileUploadHandler.bind(this);
@@ -38,9 +39,17 @@ export default class CampaignForm extends React.Component {
     const title = e.target.value;
     this.setState(() => ({ title }));
   };
-  onTriggerNumberChange = e => {
-    const triggerNumber = e.target.value;
-    this.setState(() => ({ triggerNumber }));
+  onParChange = e => {
+    const par = e.target.value;
+    this.setState(() => ({ par }));
+  };
+  onLatChange = e => {
+    const lat = e.target.value;
+    this.setState(() => ({ lat }));
+  };
+  onLngChange = e => {
+    const lng = e.target.value;
+    this.setState(() => ({ lng }));
   };
   onDateChange = createdAt => {
     this.setState(() => ({ createdAt }));
@@ -49,13 +58,9 @@ export default class CampaignForm extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     var user = firebase.auth().currentUser;
-    if (
-      !this.state.description ||
-      !this.state.title ||
-      !this.state.triggerNumber
-    ) {
+    if (!this.state.description || !this.state.title || !this.state.par) {
       this.setState(() => ({
-        error: "Please provide title, description and trigger number"
+        error: "Please provide title, description and par"
       }));
     } else {
       this.setState(() => ({ error: "" }));
@@ -63,11 +68,13 @@ export default class CampaignForm extends React.Component {
         title: this.state.title,
         description: this.state.description,
         createdAt: this.state.createdAt.valueOf(),
-        triggerNumber: this.state.triggerNumber,
+        par: this.state.par,
         createdBy: user.uid,
         members: [user.uid],
         imageURL: this.state.url,
-        emailList: user.email
+        emailList: user.email,
+        lat: this.state.lat,
+        lng: this.state.lng
       });
     }
   };
@@ -110,7 +117,7 @@ export default class CampaignForm extends React.Component {
         {this.state.error && <p>{this.state.error}</p>}
 
         <div className="campaign-form">
-          <h1 className="campaign-h1">Campaign Info</h1>
+          <h1 className="campaign-h1">Hole Info</h1>
           <Form onSubmit={this.onSubmit}>
             <Form.Row>
               <Form.Group>
@@ -127,10 +134,28 @@ export default class CampaignForm extends React.Component {
               <Form.Group>
                 <input
                   type="number"
-                  placeholder="Trigger Number"
+                  placeholder="Par"
                   autoFocus
-                  value={this.state.triggerNumber}
-                  onChange={this.onTriggerNumberChange}
+                  value={this.state.par}
+                  onChange={this.onParChange}
+                />
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Group>
+                <input
+                  type="number"
+                  placeholder="Lat"
+                  autoFocus
+                  value={this.state.lat}
+                  onChange={this.onLatChange}
+                />
+                <input
+                  type="number"
+                  placeholder="Lng"
+                  autoFocus
+                  value={this.state.lng}
+                  onChange={this.onLngChange}
                 />
               </Form.Group>
             </Form.Row>
