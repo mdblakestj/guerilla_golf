@@ -9,7 +9,7 @@ const Header = props => (
     <Container>
       <Row>
         <Col>
-          <h1>Collective Engine</h1>
+          <h1>Guerilla Golf</h1>
         </Col>
         <Col>
           <div className="logout-button">

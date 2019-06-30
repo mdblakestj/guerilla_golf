@@ -12,6 +12,7 @@ import { firebase } from "./firebase/firebase";
 import { login, logout } from "./actions/auth";
 import "./../node_modules/bootstrap/scss/bootstrap.scss";
 import LoadingPage from "./components/LoadingPage";
+// import "leaflet/dist/leaflet.css";
 
 const store = configureStore();
 

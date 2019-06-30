@@ -5,13 +5,13 @@ import NewCampaign from "../components/NewCampaign.js";
 import NewUser from "../components/NewUser.js";
 // import SignIn from './components/SignIn.js';
 import Home from "../components/Home.js";
+import ClubsAndBalls from "../components/ClubsAndBalls.js";
 import Campaign from "../components/campaign";
 import LogIn from "../components/Login";
 import { createBrowserHistory } from "history";
 import PrivateRoute from "./PrivateRoute";
 import MyCampaigns from "../components/MyCampaigns";
 import JoinEngine from "../components/JoinEngine";
-import { Container, Row, Col } from "react-bootstrap";
 
 export const history = createBrowserHistory();
 
@@ -27,6 +27,7 @@ const AppRouter = () => (
         <Route path="/campaign/:id" component={Campaign} />
         <Route path="/NewUser" component={NewUser} />
         <Route path="/JoinEngine/:id" component={JoinEngine} />
+        <Route path="/ClubsAndBalls" component={ClubsAndBalls} />
       </Switch>
     </div>
   </Router>
