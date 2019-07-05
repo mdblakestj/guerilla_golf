@@ -29,10 +29,10 @@ const Header = props => (
         <Col>
           <div className="header">
             <NavLink to="/home" activeClassName="is-active" exact={true}>
-              Home{" "}
+              Home
             </NavLink>
             <NavLink to="/NewCampaign" activeClassName="is-active">
-              New Engine
+              New Hole
             </NavLink>
             {props.auth && (
               <NavLink to="/MyCampaigns" activeClassName="is-active">
