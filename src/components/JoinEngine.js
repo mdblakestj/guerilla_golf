@@ -74,5 +74,3 @@ const mapStateToProps = (state, props) => {
 const connectedJoinEngine = connect(mapStateToProps)(JoinEngine);
 
 export default connectedJoinEngine;
-
-// props.dispatch(editCampaign(props.campaigns.id, props.auth.uid))
