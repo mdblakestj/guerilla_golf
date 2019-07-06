@@ -36,7 +36,7 @@ const Header = props => (
             </NavLink>
             {props.auth && (
               <NavLink to="/MyCampaigns" activeClassName="is-active">
-                My Engines
+                My Holes
               </NavLink>
             )}
             {!props.auth && (

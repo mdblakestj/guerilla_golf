@@ -28,6 +28,7 @@ const AppRouter = () => (
         <Route path="/NewUser" component={NewUser} />
         <Route path="/JoinEngine/:id" component={JoinEngine} />
         <Route path="/ClubsAndBalls" component={ClubsAndBalls} />
+        <Route path="/PlayerForm" component={ClubsAndBalls} />
       </Switch>
     </div>
   </Router>
