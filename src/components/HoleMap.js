@@ -15,7 +15,7 @@ export const CampaignList = props => (
       />
       {props.campaigns.map(campaign => {
         return (
-          <Marker position={[campaign.lat, campaign.lng]}>
+          <Marker key={campaign.id} position={[campaign.lat, campaign.lng]}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>

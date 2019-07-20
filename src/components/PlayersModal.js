@@ -2,8 +2,10 @@ import { connect } from "react-redux";
 import React, { Component } from "react";
 import { Button, Modal, Container, Form } from "react-bootstrap";
 import CampaignDetails from "./CampaignListItem";
+import { firebase } from "../firebase/firebase";
+import { withRouter } from "react-router-dom";
 
-export default class PlayersModal extends React.Component {
+class PlayersModal extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -14,13 +16,14 @@ export default class PlayersModal extends React.Component {
 
     this.state = {
       show: false,
-      players: ""
+      players: "",
+      error: ""
     };
   }
 
   handleClose(props) {
     this.setState({ show: false });
-    this.props.history.push("/");
+    this.props.history.push("/MyCampaigns");
   }
   onPlayersChange = e => {
     const players = e.target.value;
@@ -37,7 +40,7 @@ export default class PlayersModal extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     var user = firebase.auth().currentUser;
-    if (!this.state.players) {
+    if (this.state.players === "") {
       this.setState(() => ({
         error: "Please enter number of players"
       }));
@@ -45,7 +48,6 @@ export default class PlayersModal extends React.Component {
       this.setState(() => ({ error: "" }));
       this.props.onSubmit({
         players: this.state.players,
-        createdAt: this.state.createdAt.valueOf(),
         createdBy: user.uid
       });
     }
@@ -83,3 +85,5 @@ export default class PlayersModal extends React.Component {
     );
   }
 }
+
+export default withRouter(PlayersModal);
