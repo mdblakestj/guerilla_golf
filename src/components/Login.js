@@ -33,7 +33,7 @@ const LogIn = props => (
         <h5>New to Collective engine?</h5>
         <NavLink to="/NewUser" activeClassName="is-active">
           {" "}
-          <h7>Sign Up!</h7>
+          <h3>Sign Up!</h3>
         </NavLink>
       </Card.Body>
     </Card>
