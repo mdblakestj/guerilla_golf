@@ -39,7 +39,7 @@
     "leaflet": "^1.5.1",
     "live-server": "^1.2.0",
     "moment": "^2.24.0",
-    "node-sass": "4.5.3",
+    "node-sass": "7.0.0",
     "nodemailer": "^6.1.1",
     "raf": "^3.4.1",
     "react": "^16.8.6",
